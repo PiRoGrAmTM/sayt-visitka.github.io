@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/logo.png">
+  <title>Визитка ТОП-IT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --black: #0D0A0B;
+      --gray: #454955;
+      --green-light: #72B01D;
+      --green-dark: #3F7D20;
+      --light: #F3EFF5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Raleway", sans-serif;
+      line-height: 1.6;
+      background: var(--light);
+      color: var(--black);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--black);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--light);
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--green-light);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--black), var(--gray));
+      color: var(--light);
+      padding: 8rem 0 6rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: var(--green-light);
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      max-width: 500px;
+    }
+
+    .hero-photo img {
+      max-width: 350px;
+      border-radius: 50%;
+      border: 6px solid var(--green-light);
+      box-shadow: 0 0 20px rgba(114, 176, 29, 0.6);
+    }
+
+    .about {
+      background: var(--light);
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 2rem;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .motivation {
+      background: var(--gray);
+      color: var(--light);
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .motivation h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--green-light);
+    }
+
+    .motivation h3 {
+      margin-top: 2rem;
+      color: var(--green-light);
+    }
+
+    .scripts {
+      background: var(--green-light);
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .scripts h2 {
+      font-size: 2rem;
+      color: var(--light);
+    }
+
+    .portfolio {
+      background: var(--light);
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .portfolio h2 {
+      font-size: 2rem;
+      color: var(--green-dark);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid var(--gray);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer {
+      background: var(--black);
+      color: var(--light);
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .footer p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-photo img {
+        max-width: 220px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Шапка -->
+  <header>
+    <nav>
+
+      <ul>
+        <img src="img/logo.png" style="width: 25px;margin-right: 25px;">
+        <li><a href="#about">О себе</a></li>
+        <li><a href="#motivation">Мотивация</a></li>
+        <li><a href="#portfolio">Портфолио</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Главная -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Привет</h2>
+        <h1>Я Шумов Владимир</h1>
+        <p>Студент группы 8к53</p>
+      </div>
+      <div class="hero-photo">
+        <img src="img/photo.jpg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Обо мне -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>О себе</h2>
+      <p>
+        Я — весёлый и активный человек из столицы мира, города Барнаула. Интересуюсь в жизни многим и люблю узнавать
+        новое. Особенно мне нравится работать в команде работа в команде помогает достигать лучших результатов и
+        вдохновляет на новые идеи.
+        Программированием я занимаюсь с 8 класса, а желание стать программистом у меня появилось ещё в детстве. Для меня
+        это не просто профессия ради зарплаты — программирование вызывает у меня искренний интерес и желание развиваться
+        дальше.
+        Моя цель — стать успешным специалистом в своей сфере, совмещая трудолюбие, креативность и стремление к развитию.
+
+      </p>
+    </div>
+  </section>
+
+  <!-- Мотивационное письм -->
+  <section class="motivation" id="motivation">
+    <div class="container">
+      <h2>Мотивационное письмо</h2>
+      <div class="motivation-text">
+        <h3>Почему именно я?</h3>
+        <p>Меня отличает сочетание технических навыков и творческого подхода. Я окончил художественную школу и 4 года
+          занимался в музыкальной школе — это помогло мне развить креативность и умение видеть нестандартные решения. Я
+          создавал игру-проект на движке Unity на языке C#, а после и проходил курсы по созданию игр в той же среде от
+          “Кода будущего”. Помимо этого, я окончил курс по разработке мобильных приложений на Android Studio с
+          использованием языка Kotlin в школе Кванториума.
+          Я уверен, что именно этот баланс между творческим мышлением и техническими знаниями, а также стремление
+          познавать новое позволят стать успешным в разработке различных программных решений.
+        </p>
+        <h3>Моё будущее в IT</h3>
+        <p>Я вижу себя специалистом, который не только владеет инструментами разработки, но и способен мыслить как
+          дизайнер и создатель идей. К тому же я легко вливаюсь в коллектив, и способен вести его за собой.
+          Я хочу — стать частью группы, которая позволит мне прийти к тому успеху в сфере IT, к которому я стремлюсь. Я
+          хочу, чтобы моя работа объединяла технологии и творчество, а программа ТОП-IT станет для меня шагом к этой
+          цели.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Портфолио -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>Опыт и портфолио</h2>
+      <div class="gallery">
+        <!-- грамота 1 -->
+        <div class="gallery-item"><img src="img/1.jpg"></div>
+        <!-- грамота 2 -->
+        <div class="gallery-item"><img src="img/2.png"></div>
+      </div>
+      <div class="gallery">
+        <!-- скрин 1 -->
+        <div class="gallery-item"><img src="img/3.PNG"></div>
+        <!-- скрин 2 -->
+        <div class="gallery-item"><img src="img/4.PNG"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Скрипты -->
+  <section class="scripts" id="scripts">
+    <div class="container">
+      <h2>Фрагменты кода</h2>
+      <div class="gallery">
+        <!-- скрин 1 -->
+        <div class="gallery-item"><img src="img/1.png"></div>
+        <!-- скрин 2 -->
+        <div class="gallery-item"><img src="img/22.PNG"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Ендинг -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+      <h4><a href="https://altag.ru/storage/pdf/ce1cc92d6ed583e45d547e4a755a0e32.pdf"
+          style="color: var(--light);text-decoration: none;">Список участников 1</a></h4>
+      </p>
+      <p>
+      <h5 style="font-size: 1.3em;color:var(--green-light) ;">Контакты</h4>
+        </p>
+        <p style="margin-top: 12px;">
+        <h6><a href="https://t.me/pirgrm"
+            style="text-decoration: none; font-size: 1.3em; color: var(--green-dark)">Telegram</a></h6>
+        </p>
+        <p style="margin-top: 12px;">
+        <h6><a href="https://vk.com/prgrm"
+            style=" color: var(--green-dark)/*  */;text-decoration: none; font-size: 1.3em;">Vk</a></h6>
+        </p>
+        <p style="margin-top: 18px;">
+        <h6><a href="https://disk.yandex.ru/d/imJWqkWnPyzsOQ"
+            style="color: var(--green-light); font-size: 1.2em; text-decoration: none;">Ссылка на игру-прототип</a></h6>
+        </p>
+        <p style="margin-top: 18px;color: var(--light);">----------2025 Визитка ТОП-IT----------</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
